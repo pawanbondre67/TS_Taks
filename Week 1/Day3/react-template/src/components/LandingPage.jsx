@@ -6,10 +6,10 @@ const LandingPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
+            <h1 className="text-5xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
                 Welcome to My Page
             </h1>
-            <p className="text-xl text-gray-800 mb-4 text-center max-w-2xl">
+            <p className="text-xl px-3 text-gray-800 mb-4 text-center max-w-2xl">
                 Hi, I'm Pawan. This is a responsive landing page built with TailwindCSS.
             </p>
             <p className="text-md text-gray-700 mb-8 text-center max-w-xl">
