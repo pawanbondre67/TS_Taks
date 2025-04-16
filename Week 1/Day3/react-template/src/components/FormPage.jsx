@@ -54,7 +54,7 @@ const FormPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 flex items-center justify-center">
-            <div className="bg-white m-5 p-10 rounded-lg shadow-lg md:mx-auto max-h-fit max-w-lg">
+            <div className="bg-white m-3 p-10 rounded-lg shadow-lg md:mx-auto max-h-fit max-w-lg">
                 <h1 className="text-3xl font-bold mb-6 text-center">FeedBack Form</h1>
                 <p className="text-gray-700 mb-4 text-center">
                     We value your feedback. Please fill out the form below.
