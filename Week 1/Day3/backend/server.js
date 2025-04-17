@@ -30,6 +30,63 @@ const pool = mysql.createPool({
     }
 })();
 
+
+// Swagger setup
+// Swagger UI route
+
+const { swaggerUi, swaggerSpec } = require('./utils/swagger');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
+
+/**
+ * @swagger
+ * /submit:
+ *   post:
+ *     summary: Submit form data
+ *     description: Saves form data to the database
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               message:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Form data saved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: integer
+ *                     name:
+ *                       type: string
+ *                     email:
+ *                       type: string
+ *                     message:
+ *                       type: string
+ *       500:
+ *         description: Failed to save form data
+ *       400:
+ *         description: Bad request, invalid input
+ */
+
 // Routes
 app.post('/submit', async (req, res) => {
     try {
@@ -42,6 +99,8 @@ app.post('/submit', async (req, res) => {
         res.status(500).json({ error: 'Failed to save form data' });
     }
 });
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
